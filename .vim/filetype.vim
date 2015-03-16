@@ -13,6 +13,8 @@ augroup filetypedetect
   \ endif
 
 
+  au! BufRead,BufNewFile *.bashrc    setfiletype sh
+  au! BufRead,BufNewFile *.vimrc    setfiletype vim
   au! BufRead,BufNewFile *.das      setfiletype das
   au! BufRead,BufNewFile *.int      setfiletype int
   au! BufRead,BufNewFile *.dsc      setfiletype dsc
