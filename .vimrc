@@ -350,3 +350,29 @@ endif
 set guifont=Menlo\ Regular:h16
 highlight Comment gui=italic
 
+
+
+
+" Say a message
+function! Say(msg)
+    echohl IncSearch
+    echo a:msg
+    echohl None
+endfunction
+
+function! CopyAll()
+    normal mzggVG"+y'z
+    call Say("Copied.")
+endfunction
+command! CopyAll call CopyAll()
+
+" Delete buffer contents and Paste from OS clipboard.
+function! PasteClipboard()
+    normal ggVGd"+p1Gdd
+    call Say("Pasted.")
+endfunction
+command! PasteClipboard call PasteClipboard()
+
+
+
+
